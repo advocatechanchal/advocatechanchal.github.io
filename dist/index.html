@@ -18,20 +18,17 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-compact" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/etrove-logo.svg" alt="eTrove" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Explore</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Support</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,46 +36,64 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Welcome To Our Studio!</div>
-                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+                <div class="masthead-heading"><span id="typed-text" style="font-size: 1.7rem"></span></div>
+                <a class="btn btn-dark btn-xl text-uppercase" href="#services">Get Started</a>
             </div>
         </header>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Our Services</h2>
+                    <h3 class="section-subheading text-muted">We turn everyday friction into seamless flow, bringing innovation to every interaction.</h3>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <div class="services-slider">
+                    <div class="services-track" id="servicesTrack">
+                        <div class="service-slide" id="service-1">
+                            <div class="service-header">
+                                <div class="service-number">1</div>
+                                <h4>Discovery & Goals</h4>
+                            </div>
+                            <p class="text-muted">We clarify your vision, priorities, and success measures.</p>
+                            <div class="arrow">→</div>
+                        </div>
+                        <div class="service-slide" id="service-2">
+                            <div class="service-header">
+                                <div class="service-number">2</div>
+                                <h4>Platform Blueprint</h4>
+                            </div>
+                            <p class="text-muted">We outline key features, user flows, technology stack, and create an interactive prototype.</p>
+                            <div class="arrow">→</div>
+                        </div>
+                        <div class="service-slide" id="service-3">
+                            <div class="service-header">
+                                <div class="service-number">3</div>
+                                <h4>Visual Design</h4>
+                            </div>
+                            <p class="text-muted">We craft logos, color palette, layouts, and micro interactions that keep your brand consistent.</p>
+                            <div class="arrow">→</div>
+                        </div>
+                        <div class="service-slide" id="service-4">
+                            <div class="service-header">
+                                <div class="service-number">4</div>
+                                <h4>Build & Launch</h4>
+                            </div>
+                            <p class="text-muted">We code, test, and deploy a reliable, scalable platform ready for market.</p>
+                            <div class="arrow">→</div>
+                        </div>
+                        <div class="service-slide" id="service-5">
+                            <div class="service-header">
+                                <div class="service-number">5</div>
+                                <h4>Ongoing Support</h4>
+                            </div>
+                            <p class="text-muted">We monitor performance and deliver updates that help your product grow with your business.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- ADD THIS MISSING SECTION:-->
+        <section class="paint-drips-section"></section>
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
@@ -193,7 +208,7 @@
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2009-2011</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
+                                <h4 class="sub"></h4>
                             </div>
                             <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                         </div>
@@ -608,3 +623,23 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
+<script>
+    // ONLY typing animation - DELETE ALL OTHER SCRIPTS
+    document.addEventListener('DOMContentLoaded', function () {
+        var text = 'Simple, powerful ideas that brings communities closer.';
+        var el = document.getElementById('typed-text');
+        if (el) {
+            el.textContent = '';
+            var i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 80);
+                }
+            }
+            setTimeout(type, 500);
+        }
+    });
+</script>

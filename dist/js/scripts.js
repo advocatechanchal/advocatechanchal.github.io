@@ -1,6 +1,6 @@
 /*!
 * Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
+* Copyright 2013-2025 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
 */
 //
@@ -9,17 +9,19 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
-    // Navbar shrink function
+    // Original navbar shrink function with modification
     var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
+      const navbarCollapsible = document.body.querySelector('#mainNav');
+      if (!navbarCollapsible) return;
+      
+      if (window.scrollY === 0) {
+        navbarCollapsible.classList.remove('navbar-shrink');
+        navbarCollapsible.style.backgroundColor = 'white'; // Changed from transparent to white
+      } else {
+        navbarCollapsible.classList.add('navbar-shrink');
+        // This is the key line - keep background white when scrolled
+        navbarCollapsible.style.backgroundColor = 'white'; // Changed from transparent to white
+      }
 
     };
 
