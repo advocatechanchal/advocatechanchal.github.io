@@ -8,7 +8,7 @@ html(lang='en')
         meta(name='description', content='')
         meta(name='author', content='')
 
-        title Agency - Start Bootstrap Theme
+        title eTrove LLC Official Website
 
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
@@ -23,69 +23,306 @@ html(lang='en')
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
 
+        // Custom styles
+        style.
+            /* Fix navbar - make it slightly larger */
+            #mainNav {
+                padding-top: 0.5rem !important;
+                padding-bottom: 0.5rem !important;
+                font-size: 0.9rem !important;
+                background-color: white !important;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+            }
+            
+            /* Remove navbar brand/logo */
+            #mainNav .navbar-brand {
+                display: none !important;
+            }
+            
+            /* Make navbar links black and normal weight - slightly larger */
+            #mainNav .navbar-nav .nav-link {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.85rem !important;
+                color: black !important;
+                font-weight: 400 !important;
+            }
+            
+            /* Ensure black text on hover/active - also normal weight */
+            #mainNav .navbar-nav .nav-link:hover,
+            #mainNav .navbar-nav .nav-link:focus,
+            #mainNav .navbar-nav .nav-link.active {
+                color: black !important;
+                font-weight: 400 !important;
+            }
+            
+            /* Extended background from header */
+            header.masthead {
+                background-image: url('assets/img/header-bg1.jpg') !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                background-attachment: fixed !important;
+                min-height: 100vh !important;
+                height: 100vh !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            /* Use same gray color as header-bg1.jpg background */
+            section#services.page-section {
+                background-color: white !important; /* Clean white background */
+                background-image: none !important;
+                padding: 6rem 0 !important;
+            }
+            
+            /* Remove body padding that breaks full screen */
+            body {
+                padding-top: 0 !important;
+            }
+            
+            /* Center masthead content */
+            header.masthead .container {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                height: 100vh !important;
+                z-index: 2;
+                position: relative;
+            }
+            
+            /* Reserve space for typing text */
+            .masthead-heading {
+                min-height: 120px !important; /* Reserve space for 3 lines */
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            /* Fix button position */
+            .masthead .btn {
+                position: relative !important;
+                margin-top: 2rem !important;
+            }
+            
+            /* Make services text dark for visibility on white */
+            section#services h2.section-heading,
+            section#services h3.section-subheading {
+                color: #212529 !important; /* Dark text on white */
+                text-shadow: none !important; /* Remove text shadow */
+            }
+            
+            /* Ensure seamless transition */
+            header.masthead,
+            section#services {
+                margin: 0 !important;
+                border: none !important;
+            }
+            
+            /* Make Get Started button black and position lower */
+            .btn-primary {
+                background-color: black !important;
+                border-color: black !important;
+                color: white !important;
+            }
+            
+            .btn-primary:hover,
+            .btn-primary:focus,
+            .btn-primary:active {
+                background-color: #333 !important;
+                border-color: #333 !important;
+                color: white !important;
+            }
+            
+            /* Service step styling - horizontal layout */
+            .services-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 1.5rem;
+                margin-top: 3rem;
+                overflow-x: auto;
+                padding: 2rem 0;
+            }
+            
+            .service-step {
+                flex: 1;
+                min-width: 180px;
+                max-width: 220px;
+                text-align: center;
+                position: relative;
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 1.5s ease;
+                padding: 0 0.5rem;
+            }
+            
+            .service-step.animate {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .step-number {
+                display: inline-block;
+                background-color: black;
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                line-height: 50px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+                transition: all 0.3s ease;
+            }
+            
+            .service-step:hover .step-number {
+                transform: scale(1.1);
+                background-color: #333;
+            }
+            
+            /* Fix heading size and keep centered */
+            .service-step h4 {
+                font-size: 1rem !important;
+                font-weight: 600 !important;
+                margin-bottom: 1rem !important;
+                line-height: 1.2 !important;
+                text-align: center !important;
+            }
+            
+            /* Center the text descriptions properly under titles */
+            .service-step p {
+                font-size: 0.85rem !important;
+                text-align: center !important; /* Change from left to center */
+                line-height: 1.4 !important;
+                margin: 0 auto !important;
+                max-width: 180px !important; /* Slightly reduce width */
+                padding: 0 0.25rem !important; /* Add small padding */
+            }
+            
+            .arrow {
+                position: absolute;
+                top: 25px;
+                right: -0.75rem;
+                font-size: 1.5rem;
+                color: #ccc;
+                z-index: 1;
+            }
+            
+            .service-step:last-child .arrow {
+                display: none;
+            }
+            
+            /* Timeline text alignment */
+            .timeline > li .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+            
+            /* Ensure left timeline items have left-aligned text */
+            .timeline > li:not(.timeline-inverted) .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+            
+            /* Keep right timeline items left-aligned too for consistency */
+            .timeline > li.timeline-inverted .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+            
+            /* Also align timeline headings to the left */
+            .timeline > li .timeline-panel .timeline-heading h4 {
+                text-align: left !important;
+            }
+            
+            .timeline > li .timeline-panel .timeline-heading h4.subheading {
+                text-align: left !important;
+            }
+            
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .services-container {
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+                
+                .service-step {
+                    max-width: 100%;
+                }
+                
+                .arrow {
+                    position: static;
+                    transform: rotate(90deg);
+                    margin: 1rem 0;
+                }
+            }
+
     body#page-top
 
         // Navigation
-        nav#mainNav.navbar.navbar-expand-lg.navbar-dark.fixed-top
+        nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
             .container
-                a.navbar-brand(href='#page-top')
-                    img(src='assets/img/navbar-logo.svg', alt='...')
                 button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                     | Menu
                     i.fas.fa-bars.ms-1
                 #navbarResponsive.collapse.navbar-collapse
                     ul.navbar-nav.text-uppercase.ms-auto.py-4.py-lg-0
                         li.nav-item
-                            a.nav-link(href='#services') Services
+                            a.nav-link(href='#services') Explore
                         li.nav-item
-                            a.nav-link(href='#portfolio') Portfolio
-                        li.nav-item
-                            a.nav-link(href='#about') About
-                        li.nav-item
-                            a.nav-link(href='#team') Team
-                        li.nav-item
-                            a.nav-link(href='#contact') Contact
+                            a.nav-link(href='#contact') Support
         // Masthead
         header.masthead
             .container
-                .masthead-subheading Welcome To Our Studio!
-                .masthead-heading.text-uppercase It's Nice To Meet You
-                a.btn.btn-primary.btn-xl.text-uppercase(href='#services') Tell Me More
+                .masthead-heading#typed-text(style="font-size: 2rem; font-weight: 700; line-height: 1.1; text-align: center;")
+                a.btn.btn-primary.btn-xl.text-uppercase(href='#services') Get Started
 
         // Services
         section#services.page-section
             .container
                 .text-center
                     h2.section-heading.text-uppercase Services
-                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-                .row.text-center
-                    .col-md-4
-                        span.fa-stack.fa-4x
-                            i.fas.fa-circle.fa-stack-2x.text-primary
-                            i.fas.fa-shopping-cart.fa-stack-1x.fa-inverse
-                        h4.my-3 E-Commerce
-                        p.text-muted
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-                    .col-md-4
-                        span.fa-stack.fa-4x
-                            i.fas.fa-circle.fa-stack-2x.text-primary
-                            i.fas.fa-laptop.fa-stack-1x.fa-inverse
-                        h4.my-3 Responsive Design
-                        p.text-muted
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-                    .col-md-4
-                        span.fa-stack.fa-4x
-                            i.fas.fa-circle.fa-stack-2x.text-primary
-                            i.fas.fa-lock.fa-stack-1x.fa-inverse
-                        h4.my-3 Web Security
-                        p.text-muted
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+                    h3.section-subheading.text-muted We turn everyday friction into seamless flow, bringing innovation to every interaction.
+                
+                .services-container
+                    .service-step
+                        .step-number
+                            span 1
+                        h4.my-3 Discovery & Goals
+                        p.text-muted We clarify your vision, priorities, and success measures.
+                        .arrow →
+                    
+                    .service-step
+                        .step-number
+                            span 2
+                        h4.my-3 Platform Blueprint
+                        p.text-muted We outline key features, user flows, technology stack, and create an interactive prototype.
+                        .arrow →
+                    
+                    .service-step
+                        .step-number
+                            span 3
+                        h4.my-3 Visual Design
+                        p.text-muted We craft logos, color palette, layouts, and micro interactions that keep your brand consistent.
+                        .arrow →
+                    
+                    .service-step
+                        .step-number
+                            span 4
+                        h4.my-3 Build & Launch
+                        p.text-muted We code, test, and deploy a reliable, scalable platform ready for market.
+                        .arrow →
+                    
+                    .service-step
+                        .step-number
+                            span 5
+                        h4.my-3 Ongoing Support
+                        p.text-muted We monitor performance and deliver updates that help your product grow with your business.
 
         // Portfolio Grid
         section#portfolio.page-section.bg-light
             .container
                 .text-center
-                    h2.section-heading.text-uppercase Portfolio
+                    h2.section-heading.text-uppercase Apps
                     h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
                 .row
                     .col-lg-4.col-sm-6.mb-4
@@ -95,10 +332,10 @@ html(lang='en')
                                 .portfolio-hover
                                     .portfolio-hover-content
                                         i.fas.fa-plus.fa-3x
-                                img.img-fluid(src='assets/img/portfolio/1.jpg', alt='...')
+                                img.img-fluid(src='assets/img/portfolio/11.jpg', alt='...')
                             .portfolio-caption
-                                .portfolio-caption-heading Threads
-                                .portfolio-caption-subheading.text-muted Illustration
+                                .portfolio-caption-heading SwapDoor
+                                .portfolio-caption-subheading.text-muted Where campus meets marketplace
                     .col-lg-4.col-sm-6.mb-4
                         // Portfolio item 2
                         .portfolio-item
@@ -160,48 +397,48 @@ html(lang='en')
             .container
                 .text-center
                     h2.section-heading.text-uppercase About
-                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+                    h3.section-subheading.text-muted The SwapDoor journey from campus idea to national platform.
                 ul.timeline
                     li
                         .timeline-image
                             img.rounded-circle.img-fluid(src='assets/img/about/1.jpg', alt='...')
                         .timeline-panel
                             .timeline-heading
-                                h4 2009-2011
-                                h4.subheading Our Humble Beginnings
+                                h4 2021
+                                h4.subheading Spark of an idea
                             .timeline-body
                                 p.text-muted
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                                    | As COVID move‑outs clogged hallways with abandoned furniture, Minjae saw classmates lose time and money on late eBay deliveries and no‑show buyers. He drafted a campus‑only marketplace secured by .edu email verification so students could trade with people they already knew. Early feedback across dorms echoed the same trust gap: last‑minute deals with little reliability.
                     li.timeline-inverted
                         .timeline-image
                             img.rounded-circle.img-fluid(src='assets/img/about/2.jpg', alt='...')
                         .timeline-panel
                             .timeline-heading
-                                h4 March 2011
-                                h4.subheading An Agency is Born
+                                h4 2022
+                                h4.subheading Code over capital
                             .timeline-body
                                 p.text-muted
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                                    | With no budget for outside developers, Minjae taught himself to code and launched a university‑verified beta. The prototype's closed loop worked—more than 300 trades cleared in its first month—proving that a student‑only exchange could thrive on trust and speed.
                     li
                         .timeline-image
                             img.rounded-circle.img-fluid(src='assets/img/about/3.jpg', alt='...')
                         .timeline-panel
                             .timeline-heading
-                                h4 December 2015
-                                h4.subheading Transition to Full Service
+                                h4 2024
+                                h4.subheading Built for scale
                             .timeline-body
                                 p.text-muted
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                                    | To transform the scrappy beta into a national platform, Minjae brought in software engineer Milan Rona as co‑founder and CTO. Milan fortified the backend for higher speed and stronger security, paving the way for seamless multi‑campus deployment and future expansion.
                     li.timeline-inverted
                         .timeline-image
                             img.rounded-circle.img-fluid(src='assets/img/about/4.jpg', alt='...')
                         .timeline-panel
                             .timeline-heading
-                                h4 July 2020
-                                h4.subheading Phase Two Expansion
+                                h4 2025
+                                h4.subheading Public launch & growth
                             .timeline-body
                                 p.text-muted
-                                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                                    | Reorganized as eTrove LLC, Swapdoor opened to U.S. campuses and immediately gained traction: 600+ active students posted 950+ listings in the first 90 days. With that momentum, the team began preparing the platform for a full nationwide rollout.
                     li.timeline-inverted
                         .timeline-image
                             h4
@@ -399,3 +636,51 @@ html(lang='en')
         // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
         script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
+    script.
+        // Typing animation for header
+        document.addEventListener('DOMContentLoaded', function () {
+            var text = 'Simple, powerful ideas that brings communities closer.';
+            var el = document.getElementById('typed-text');
+            if (el) {
+                el.textContent = '';
+                var i = 0;
+                
+                function type() {
+                    if (i < text.length) {
+                        el.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, 100);
+                    }
+                }
+                setTimeout(type, 1000);
+            }
+            
+            // Scroll-triggered service animation
+            function checkScroll() {
+                var servicesSection = document.getElementById('services');
+                var serviceSteps = document.querySelectorAll('.service-step');
+                
+                if (servicesSection && serviceSteps.length > 0) {
+                    var rect = servicesSection.getBoundingClientRect();
+                    var windowHeight = window.innerHeight;
+                    
+                    // Check if services section is in view
+                    if (rect.top < windowHeight * 0.8) {
+                        serviceSteps.forEach(function(step, index) {
+                            setTimeout(function() {
+                                step.classList.add('animate');
+                            }, index * 500); // 500ms delay between each step
+                        });
+                        
+                        // Remove scroll listener after animation starts
+                        window.removeEventListener('scroll', checkScroll);
+                    }
+                }
+            }
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', checkScroll);
+            
+            // Check on load in case services is already in view
+            checkScroll();
+        });

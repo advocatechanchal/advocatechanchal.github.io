@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>eTrove LLC Official Website</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -15,12 +15,244 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Custom styles-->
+        <style>
+            /* Fix navbar - make it slightly larger */
+            #mainNav {
+                padding-top: 0.5rem !important;
+                padding-bottom: 0.5rem !important;
+                font-size: 0.9rem !important;
+                background-color: white !important;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+            }
+
+            /* Remove navbar brand/logo */
+            #mainNav .navbar-brand {
+                display: none !important;
+            }
+
+            /* Make navbar links black and normal weight - slightly larger */
+            #mainNav .navbar-nav .nav-link {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.85rem !important;
+                color: black !important;
+                font-weight: 400 !important;
+            }
+
+            /* Ensure black text on hover/active - also normal weight */
+            #mainNav .navbar-nav .nav-link:hover,
+            #mainNav .navbar-nav .nav-link:focus,
+            #mainNav .navbar-nav .nav-link.active {
+                color: black !important;
+                font-weight: 400 !important;
+            }
+
+            /* Extended background from header */
+            header.masthead {
+                background-image: url('assets/img/header-bg1.jpg') !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                background-attachment: fixed !important;
+                min-height: 100vh !important;
+                height: 100vh !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            /* Use same gray color as header-bg1.jpg background */
+            section#services.page-section {
+                background-color: white !important; /* Clean white background */
+                background-image: none !important;
+                padding: 6rem 0 !important;
+            }
+
+            /* Remove body padding that breaks full screen */
+            body {
+                padding-top: 0 !important;
+            }
+
+            /* Center masthead content */
+            header.masthead .container {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                height: 100vh !important;
+                z-index: 2;
+                position: relative;
+            }
+
+            /* Reserve space for typing text */
+            .masthead-heading {
+                min-height: 120px !important; /* Reserve space for 3 lines */
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            /* Fix button position */
+            .masthead .btn {
+                position: relative !important;
+                margin-top: 2rem !important;
+            }
+
+            /* Make services text dark for visibility on white */
+            section#services h2.section-heading,
+            section#services h3.section-subheading {
+                color: #212529 !important; /* Dark text on white */
+                text-shadow: none !important; /* Remove text shadow */
+            }
+
+            /* Ensure seamless transition */
+            header.masthead,
+            section#services {
+                margin: 0 !important;
+                border: none !important;
+            }
+
+            /* Make Get Started button black and position lower */
+            .btn-primary {
+                background-color: black !important;
+                border-color: black !important;
+                color: white !important;
+            }
+
+            .btn-primary:hover,
+            .btn-primary:focus,
+            .btn-primary:active {
+                background-color: #333 !important;
+                border-color: #333 !important;
+                color: white !important;
+            }
+
+            /* Service step styling - horizontal layout */
+            .services-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 1.5rem;
+                margin-top: 3rem;
+                overflow-x: auto;
+                padding: 2rem 0;
+            }
+
+            .service-step {
+                flex: 1;
+                min-width: 180px;
+                max-width: 220px;
+                text-align: center;
+                position: relative;
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 1.5s ease;
+                padding: 0 0.5rem;
+            }
+
+            .service-step.animate {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .step-number {
+                display: inline-block;
+                background-color: black;
+                color: white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                line-height: 50px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+                transition: all 0.3s ease;
+            }
+
+            .service-step:hover .step-number {
+                transform: scale(1.1);
+                background-color: #333;
+            }
+
+            /* Fix heading size and keep centered */
+            .service-step h4 {
+                font-size: 1rem !important;
+                font-weight: 600 !important;
+                margin-bottom: 1rem !important;
+                line-height: 1.2 !important;
+                text-align: center !important;
+            }
+
+            /* Center the text descriptions properly under titles */
+            .service-step p {
+                font-size: 0.85rem !important;
+                text-align: center !important; /* Change from left to center */
+                line-height: 1.4 !important;
+                margin: 0 auto !important;
+                max-width: 180px !important; /* Slightly reduce width */
+                padding: 0 0.25rem !important; /* Add small padding */
+            }
+
+            .arrow {
+                position: absolute;
+                top: 25px;
+                right: -0.75rem;
+                font-size: 1.5rem;
+                color: #ccc;
+                z-index: 1;
+            }
+
+            .service-step:last-child .arrow {
+                display: none;
+            }
+
+            /* Timeline text alignment */
+            .timeline > li .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+
+            /* Ensure left timeline items have left-aligned text */
+            .timeline > li:not(.timeline-inverted) .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+
+            /* Keep right timeline items left-aligned too for consistency */
+            .timeline > li.timeline-inverted .timeline-panel .timeline-body p {
+                text-align: left !important;
+            }
+
+            /* Also align timeline headings to the left */
+            .timeline > li .timeline-panel .timeline-heading h4 {
+                text-align: left !important;
+            }
+
+            .timeline > li .timeline-panel .timeline-heading h4.subheading {
+                text-align: left !important;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .services-container {
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+
+                .service-step {
+                    max-width: 100%;
+                }
+
+                .arrow {
+                    position: static;
+                    transform: rotate(90deg);
+                    margin: 1rem 0;
+                }
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-compact" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/etrove-logo.svg" alt="eTrove" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -36,69 +268,55 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-heading"><span id="typed-text" style="font-size: 1.7rem"></span></div>
-                <a class="btn btn-dark btn-xl text-uppercase" href="#services">Get Started</a>
+                <div class="masthead-heading" id="typed-text" style="font-size: 2rem; font-weight: 700; line-height: 1.1; text-align: center"></div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Get Started</a>
             </div>
         </header>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Services</h2>
+                    <h2 class="section-heading text-uppercase">Services</h2>
                     <h3 class="section-subheading text-muted">We turn everyday friction into seamless flow, bringing innovation to every interaction.</h3>
                 </div>
-                <div class="services-slider">
-                    <div class="services-track" id="servicesTrack">
-                        <div class="service-slide" id="service-1">
-                            <div class="service-header">
-                                <div class="service-number">1</div>
-                                <h4>Discovery & Goals</h4>
-                            </div>
-                            <p class="text-muted">We clarify your vision, priorities, and success measures.</p>
-                            <div class="arrow">→</div>
-                        </div>
-                        <div class="service-slide" id="service-2">
-                            <div class="service-header">
-                                <div class="service-number">2</div>
-                                <h4>Platform Blueprint</h4>
-                            </div>
-                            <p class="text-muted">We outline key features, user flows, technology stack, and create an interactive prototype.</p>
-                            <div class="arrow">→</div>
-                        </div>
-                        <div class="service-slide" id="service-3">
-                            <div class="service-header">
-                                <div class="service-number">3</div>
-                                <h4>Visual Design</h4>
-                            </div>
-                            <p class="text-muted">We craft logos, color palette, layouts, and micro interactions that keep your brand consistent.</p>
-                            <div class="arrow">→</div>
-                        </div>
-                        <div class="service-slide" id="service-4">
-                            <div class="service-header">
-                                <div class="service-number">4</div>
-                                <h4>Build & Launch</h4>
-                            </div>
-                            <p class="text-muted">We code, test, and deploy a reliable, scalable platform ready for market.</p>
-                            <div class="arrow">→</div>
-                        </div>
-                        <div class="service-slide" id="service-5">
-                            <div class="service-header">
-                                <div class="service-number">5</div>
-                                <h4>Ongoing Support</h4>
-                            </div>
-                            <p class="text-muted">We monitor performance and deliver updates that help your product grow with your business.</p>
-                        </div>
+                <div class="services-container">
+                    <div class="service-step">
+                        <div class="step-number"><span>1</span></div>
+                        <h4 class="my-3">Discovery & Goals</h4>
+                        <p class="text-muted">We clarify your vision, priorities, and success measures.</p>
+                        <div class="arrow">→</div>
+                    </div>
+                    <div class="service-step">
+                        <div class="step-number"><span>2</span></div>
+                        <h4 class="my-3">Platform Blueprint</h4>
+                        <p class="text-muted">We outline key features, user flows, technology stack, and create an interactive prototype.</p>
+                        <div class="arrow">→</div>
+                    </div>
+                    <div class="service-step">
+                        <div class="step-number"><span>3</span></div>
+                        <h4 class="my-3">Visual Design</h4>
+                        <p class="text-muted">We craft logos, color palette, layouts, and micro interactions that keep your brand consistent.</p>
+                        <div class="arrow">→</div>
+                    </div>
+                    <div class="service-step">
+                        <div class="step-number"><span>4</span></div>
+                        <h4 class="my-3">Build & Launch</h4>
+                        <p class="text-muted">We code, test, and deploy a reliable, scalable platform ready for market.</p>
+                        <div class="arrow">→</div>
+                    </div>
+                    <div class="service-step">
+                        <div class="step-number"><span>5</span></div>
+                        <h4 class="my-3">Ongoing Support</h4>
+                        <p class="text-muted">We monitor performance and deliver updates that help your product grow with your business.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- ADD THIS MISSING SECTION:-->
-        <section class="paint-drips-section"></section>
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
+                    <h2 class="section-heading text-uppercase">Apps</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
@@ -109,11 +327,11 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/11.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                                <div class="portfolio-caption-heading">SwapDoor</div>
+                                <div class="portfolio-caption-subheading text-muted">Where campus meets marketplace</div>
                             </div>
                         </div>
                     </div>
@@ -200,47 +418,47 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">The SwapDoor journey from campus idea to national platform.</h3>
                 </div>
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2009-2011</h4>
-                                <h4 class="sub"></h4>
+                                <h4>2021</h4>
+                                <h4 class="subheading">Spark of an idea</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">As COVID move‑outs clogged hallways with abandoned furniture, Minjae saw classmates lose time and money on late eBay deliveries and no‑show buyers. He drafted a campus‑only marketplace secured by .edu email verification so students could trade with people they already knew. Early feedback across dorms echoed the same trust gap: last‑minute deals with little reliability.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
+                                <h4>2022</h4>
+                                <h4 class="subheading">Code over capital</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">With no budget for outside developers, Minjae taught himself to code and launched a university‑verified beta. The prototype's closed loop worked—more than 300 trades cleared in its first month—proving that a student‑only exchange could thrive on trust and speed.</p></div>
                         </div>
                     </li>
                     <li>
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>December 2015</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
+                                <h4>2024</h4>
+                                <h4 class="subheading">Built for scale</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">To transform the scrappy beta into a national platform, Minjae brought in software engineer Milan Rona as co‑founder and CTO. Milan fortified the backend for higher speed and stronger security, paving the way for seamless multi‑campus deployment and future expansion.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>July 2020</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
+                                <h4>2025</h4>
+                                <h4 class="subheading">Public launch & growth</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                            <div class="timeline-body"><p class="text-muted">Reorganized as eTrove LLC, Swapdoor opened to U.S. campuses and immediately gained traction: 600+ active students posted 950+ listings in the first 90 days. With that momentum, the team began preparing the platform for a full nationwide rollout.</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -622,24 +840,53 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
-</html>
-<script>
-    // ONLY typing animation - DELETE ALL OTHER SCRIPTS
-    document.addEventListener('DOMContentLoaded', function () {
-        var text = 'Simple, powerful ideas that brings communities closer.';
-        var el = document.getElementById('typed-text');
-        if (el) {
-            el.textContent = '';
-            var i = 0;
+    <script>
+        // Typing animation for header
+        document.addEventListener('DOMContentLoaded', function () {
+            var text = 'Simple, powerful ideas that brings communities closer.';
+            var el = document.getElementById('typed-text');
+            if (el) {
+                el.textContent = '';
+                var i = 0;
 
-            function type() {
-                if (i < text.length) {
-                    el.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, 80);
+                function type() {
+                    if (i < text.length) {
+                        el.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, 100);
+                    }
+                }
+                setTimeout(type, 1000);
+            }
+
+            // Scroll-triggered service animation
+            function checkScroll() {
+                var servicesSection = document.getElementById('services');
+                var serviceSteps = document.querySelectorAll('.service-step');
+
+                if (servicesSection && serviceSteps.length > 0) {
+                    var rect = servicesSection.getBoundingClientRect();
+                    var windowHeight = window.innerHeight;
+
+                    // Check if services section is in view
+                    if (rect.top < windowHeight * 0.8) {
+                        serviceSteps.forEach(function (step, index) {
+                            setTimeout(function () {
+                                step.classList.add('animate');
+                            }, index * 500); // 500ms delay between each step
+                        });
+
+                        // Remove scroll listener after animation starts
+                        window.removeEventListener('scroll', checkScroll);
+                    }
                 }
             }
-            setTimeout(type, 500);
-        }
-    });
-</script>
+
+            // Listen for scroll events
+            window.addEventListener('scroll', checkScroll);
+
+            // Check on load in case services is already in view
+            checkScroll();
+        });
+    </script>
+</html>
