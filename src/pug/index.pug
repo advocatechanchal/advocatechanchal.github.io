@@ -34,9 +34,20 @@ html(lang='en')
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
             }
             
-            /* Remove navbar brand/logo */
+            /* Show navbar brand/logo */
             #mainNav .navbar-brand {
-                display: none !important;
+                display: block !important;
+                padding: 0.25rem 0 !important;
+            }
+
+            #mainNav .navbar-brand img {
+                height: 40px !important;
+                width: auto !important;
+                transition: transform 0.3s ease !important;
+            }
+
+            #mainNav .navbar-brand img:hover {
+                transform: scale(1.05) !important;
             }
             
             /* Make navbar links black and normal weight - slightly larger */
@@ -261,6 +272,8 @@ html(lang='en')
         // Navigation
         nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
             .container
+                a.navbar-brand(href='#page-top')
+                    img(src='assets/img/navbar-logo2.jpg', alt='eTrove LLC')
                 button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
                     | Menu
                     i.fas.fa-bars.ms-1
@@ -269,7 +282,7 @@ html(lang='en')
                         li.nav-item
                             a.nav-link(href='#services') Explore
                         li.nav-item
-                            a.nav-link(href='#contact') Support
+                            a.nav-link(href='contact.html') Support
         // Masthead
         header.masthead
             .container
@@ -336,61 +349,6 @@ html(lang='en')
                             .portfolio-caption
                                 .portfolio-caption-heading SwapDoor
                                 .portfolio-caption-subheading.text-muted Where campus meets marketplace
-                    .col-lg-4.col-sm-6.mb-4
-                        // Portfolio item 2
-                        .portfolio-item
-                            a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal2')
-                                .portfolio-hover
-                                    .portfolio-hover-content
-                                        i.fas.fa-plus.fa-3x
-                                img.img-fluid(src='assets/img/portfolio/2.jpg', alt='...')
-                            .portfolio-caption
-                                .portfolio-caption-heading Explore
-                                .portfolio-caption-subheading.text-muted Graphic Design
-                    .col-lg-4.col-sm-6.mb-4
-                        // Portfolio item 3
-                        .portfolio-item
-                            a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal3')
-                                .portfolio-hover
-                                    .portfolio-hover-content
-                                        i.fas.fa-plus.fa-3x
-                                img.img-fluid(src='assets/img/portfolio/3.jpg', alt='...')
-                            .portfolio-caption
-                                .portfolio-caption-heading Finish
-                                .portfolio-caption-subheading.text-muted Identity
-                    .col-lg-4.col-sm-6.mb-4.mb-lg-0
-                        // Portfolio item 4
-                        .portfolio-item
-                            a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal4')
-                                .portfolio-hover
-                                    .portfolio-hover-content
-                                        i.fas.fa-plus.fa-3x
-                                img.img-fluid(src='assets/img/portfolio/4.jpg', alt='...')
-                            .portfolio-caption
-                                .portfolio-caption-heading Lines
-                                .portfolio-caption-subheading.text-muted Branding
-                    .col-lg-4.col-sm-6.mb-4.mb-sm-0
-                        // Portfolio item 5
-                        .portfolio-item
-                            a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal5')
-                                .portfolio-hover
-                                    .portfolio-hover-content
-                                        i.fas.fa-plus.fa-3x
-                                img.img-fluid(src='assets/img/portfolio/5.jpg', alt='...')
-                            .portfolio-caption
-                                .portfolio-caption-heading Southwest
-                                .portfolio-caption-subheading.text-muted Website Design
-                    .col-lg-4.col-sm-6
-                        // Portfolio item 6
-                        .portfolio-item
-                            a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal6')
-                                .portfolio-hover
-                                    .portfolio-hover-content
-                                        i.fas.fa-plus.fa-3x
-                                img.img-fluid(src='assets/img/portfolio/6.jpg', alt='...')
-                            .portfolio-caption
-                                .portfolio-caption-heading Window
-                                .portfolio-caption-subheading.text-muted Photography
 
         // About
         section#about.page-section
@@ -510,101 +468,12 @@ html(lang='en')
                         a(href='#!')
                             img.img-fluid.img-brand.d-block.mx-auto(src='assets/img/logos/ibm.svg', alt='...', aria-label='IBM Logo')
 
-        // Contact
-        section#contact.page-section
-            .container
-                .text-center
-                    h2.section-heading.text-uppercase Contact Us
-                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-
-                // * * * * * * * * * * * * * * *
-                // * * SB Forms Contact Form * *
-                // * * * * * * * * * * * * * * *
-
-                // This form is pre-integrated with SB Forms.
-                // To make this form functional, sign up at
-                // https://startbootstrap.com/solution/contact-forms
-                // to get an API token!
-
-                form#contactForm(data-sb-form-api-token='API_TOKEN')
-                    .row.align-items-stretch.mb-5
-                        .col-md-6
-                            .form-group
-
-                                // Name input
-                                input#name.form-control(
-                                    type='text',
-                                    placeholder='Your Name *',
-                                    data-sb-validations='required'
-                                )
-                                .invalid-feedback(data-sb-feedback='name:required')
-                                    | A name is required.
-
-                            .form-group
-
-                                // Email address input
-                                input#email.form-control(
-                                    type='email',
-                                    placeholder='Your Email *',
-                                    data-sb-validations='required,email'
-                                )
-                                .invalid-feedback(data-sb-feedback='email:required')
-                                    | An email is required.
-                                .invalid-feedback(data-sb-feedback='email:email')
-                                    | Email is not valid.
-
-                            .form-group.mb-md-0
-
-                                // Phone number input
-                                input#phone.form-control(
-                                    type='tel',
-                                    placeholder='Your Phone *',
-                                    data-sb-validations='required'
-                                )
-                                .invalid-feedback(data-sb-feedback='phone:required')
-                                    | A phone number is required.
-
-                        .col-md-6
-                            .form-group.form-group-textarea.mb-md-0
-
-                                // Message input
-                                textarea#message.form-control(
-                                    placeholder='Your Message *',
-                                    data-sb-validations='required'
-                                )
-                                .invalid-feedback(data-sb-feedback='message:required')
-                                    | A message is required.
-
-                    // Submit success message
-                    //
-                    // This is what your users will see when the form
-                    // has successfully submitted
-
-                    #submitSuccessMessage.d-none
-                        .text-center.text-white.mb-3
-                            .fw-bolder Form submission successful!
-                            | To activate this form, sign up at
-                            br
-                            a(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
-
-                    // Submit error message
-                    //
-                    // This is what your users will see when there is
-                    // an error submitting the form
-
-                    #submitErrorMessage.d-none
-                        .text-center.text-danger.mb-3 Error sending message!
-
-                    // Submit Button
-                    .text-center
-                        button#submitButton.btn.btn-primary.btn-xl.text-uppercase.disabled(type='submit') Send Message
-
         // Footer
         footer.footer.py-4
             .container
                 .row.align-items-center
                     .col-lg-4.text-lg-start
-                        | Copyright &copy; Your Website 2023
+                        | Copyright &copy; eTrove LLC 2025
                     .col-lg-4.my-3.my-lg-0
                         a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Twitter')
                             i.fab.fa-twitter
