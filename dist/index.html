@@ -258,6 +258,117 @@
                     margin: 1rem 0;
                 }
             }
+
+            /* Dropdown menu styling - HOVER activated with delay */
+            .navbar-nav .dropdown:hover .dropdown-menu {
+                display: block !important;
+            }
+
+            .navbar-nav .dropdown-menu {
+                display: none !important;
+                background-color: white !important;
+                border: 1px solid #e9ecef !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+                padding: 0.5rem 0 !important;
+                margin-top: 0.5rem !important;
+                min-width: 180px !important;
+                transition: opacity 0.3s ease, visibility 0.3s ease !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+            }
+
+            .navbar-nav .dropdown:hover .dropdown-menu {
+                opacity: 1 !important;
+                visibility: visible !important;
+                display: block !important;
+            }
+
+            /* Add hover area to prevent dropdown from disappearing */
+            .navbar-nav .dropdown {
+                position: relative !important;
+            }
+
+            .navbar-nav .dropdown::before {
+                content: '' !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                height: 10px !important;
+                background: transparent !important;
+                z-index: 999 !important;
+            }
+
+            .navbar-nav .dropdown-item {
+                color: #2c3e50 !important;
+                font-size: 0.85rem !important;
+                font-weight: 400 !important;
+                padding: 0.5rem 1.5rem !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.5px !important;
+                transition: all 0.3s ease !important;
+                text-decoration: none !important;
+            }
+
+            .navbar-nav .dropdown-item:hover {
+                background-color: transparent !important;
+                color: #2c3e50 !important;
+                text-decoration: underline !important;
+            }
+
+            /* Latest News Section Styling */
+            #news {
+                background-color: #f8f9fa !important;
+                padding: 6rem 0 !important;
+            }
+
+            .news-card {
+                background: white !important;
+                border-radius: 12px !important;
+                overflow: hidden !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+                transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+                height: 100% !important;
+            }
+
+            .news-card:hover {
+                transform: translateY(-5px) !important;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+            }
+
+            .news-image {
+                height: 200px !important;
+                overflow: hidden !important;
+            }
+
+            .news-image img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                transition: transform 0.3s ease !important;
+            }
+
+            .news-card:hover .news-image img {
+                transform: scale(1.05) !important;
+            }
+
+            .news-content {
+                padding: 1.5rem !important;
+            }
+
+            .news-content h4 {
+                font-size: 1.25rem !important;
+                font-weight: 600 !important;
+                margin-bottom: 1rem !important;
+                color: #2c3e50 !important;
+            }
+
+            .news-content p {
+                font-size: 0.95rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 1.5rem !important;
+            }
         </style>
     </head>
     <body id="page-top">
@@ -271,7 +382,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Explore</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button">Explore</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">About</a></li>
+                                <li><a class="dropdown-item" href="team.html">Executives</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
                     </ul>
                 </div>
@@ -350,109 +467,47 @@
                 </div>
             </div>
         </section>
-        <!-- About-->
-        <section class="page-section" id="about">
+        <!-- Latest News Section-->
+        <section class="page-section" id="news">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">The SwapDoor journey from campus idea to national platform.</h3>
+                    <h2 class="section-heading text-uppercase">Our Latest News</h2>
+                    <h3 class="section-subheading text-muted">Stay updated with our latest developments and announcements</h3>
                 </div>
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2021</h4>
-                                <h4 class="subheading">Spark of an idea</h4>
+                <div class="row mt-5">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="news-card">
+                            <div class="news-image"><img class="img-fluid" src="assets/img/news/news1.jpg" alt="News 1" /></div>
+                            <div class="news-content">
+                                <h4>Platform Expansion Update</h4>
+                                <p class="text-muted">We're excited to announce SwapDoor's expansion to 50+ new universities across the country, bringing our trusted marketplace to more students.</p>
+                                <a class="btn btn-outline-primary btn-sm" href="#!">Read more</a>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">As COVID move‑outs clogged hallways with abandoned furniture, Minjae saw classmates lose time and money on late eBay deliveries and no‑show buyers. He drafted a campus‑only marketplace secured by .edu email verification so students could trade with people they already knew. Early feedback across dorms echoed the same trust gap: last‑minute deals with little reliability.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2022</h4>
-                                <h4 class="subheading">Code over capital</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">With no budget for outside developers, Minjae taught himself to code and launched a university‑verified beta. The prototype's closed loop worked—more than 300 trades cleared in its first month—proving that a student‑only exchange could thrive on trust and speed.</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2024</h4>
-                                <h4 class="subheading">Built for scale</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">To transform the scrappy beta into a national platform, Minjae brought in software engineer Milan Rona as co‑founder and CTO. Milan fortified the backend for higher speed and stronger security, paving the way for seamless multi‑campus deployment and future expansion.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2025</h4>
-                                <h4 class="subheading">Public launch & growth</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Reorganized as eTrove LLC, Swapdoor opened to U.S. campuses and immediately gained traction: 600+ active students posted 950+ listings in the first 90 days. With that momentum, the team began preparing the platform for a full nationwide rollout.</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>
-                                Be Part
-                                <br />
-                                Of Our
-                                <br />
-                                Story!
-                            </h4>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <!-- Team-->
-        <section class="page-section bg-light" id="team">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                            <h4>Parveen Anand</h4>
-                            <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                            <h4>Diana Petersen</h4>
-                            <p class="text-muted">Lead Marketer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="news-card">
+                            <div class="news-image"><img class="img-fluid" src="assets/img/news/news2.jpg" alt="News 2" /></div>
+                            <div class="news-content">
+                                <h4>New Security Features</h4>
+                                <p class="text-muted">Enhanced verification system and improved safety measures now live to ensure even more secure transactions for our campus community.</p>
+                                <a class="btn btn-outline-primary btn-sm" href="#!">Read more</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                            <h4>Larry Parker</h4>
-                            <p class="text-muted">Lead Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="news-card">
+                            <div class="news-image"><img class="img-fluid" src="assets/img/news/news3.jpg" alt="News 3" /></div>
+                            <div class="news-content">
+                                <h4>Community Growth Milestone</h4>
+                                <p class="text-muted">Celebrating 10,000+ active users and 25,000+ successful trades as we continue building the future of campus commerce.</p>
+                                <a class="btn btn-outline-primary btn-sm" href="#!">Read more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center"><a class="btn btn-primary btn-lg" href="#!">See more at Newsroom</a></div>
                 </div>
             </div>
         </section>
