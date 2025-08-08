@@ -64,7 +64,6 @@ html(lang='en')
                 visibility: hidden !important;
             }
 
-            /* Add hover area to prevent dropdown from disappearing */
             .navbar-nav .dropdown {
                 position: relative !important;
             }
@@ -97,6 +96,67 @@ html(lang='en')
                 text-decoration: underline !important;
             }
 
+            /* Team member styling */
+            .team-member {
+                margin-bottom: 4rem;
+                text-align: left;
+                display: flex;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+
+            .team-member img {
+                width: 200px;
+                height: 200px;
+                border: 7px solid rgba(0,0,0,0.1);
+                flex-shrink: 0;
+            }
+
+            .team-member-content {
+                flex: 1;
+            }
+
+            .team-member h4 {
+                margin-top: 0;
+                margin-bottom: 0.5rem;
+                font-weight: 700;
+            }
+
+            .team-member .position-title {
+                color: #6c757d;
+                font-style: italic;
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                font-weight: 500;
+            }
+
+            .team-member .bio {
+                color: #6c757d;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                text-align: left;
+                max-width: 100%;
+            }
+
+            .team-member .social-links {
+                display: flex;
+                gap: 0.5rem;
+            }
+
+            @media (max-width: 768px) {
+                .team-member {
+                    flex-direction: column;
+                    text-align: center;
+                    align-items: center;
+                }
+                
+                .team-member img {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+
     body#page-top
         // Navigation - EXACT SAME AS INDEX.PUG
         nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
@@ -123,45 +183,41 @@ html(lang='en')
             .container
                 .text-center
                     h2.section-heading.text-uppercase Executives
-                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+                    h3.section-subheading.text-muted Meet the leadership team driving eTrove's vision and innovation.
                 .row
-                    .col-lg-4
+                    .col-lg-10.mx-auto
                         .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/team/1.jpg', alt='...')
-                            h4 Parveen Anand
-                            p.text-muted Lead Designer
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Parveen Anand Twitter Profile')
-                                i.fab.fa-twitter
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Parveen Anand Facebook Profile')
-                                i.fab.fa-facebook-f
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Parveen Anand LinkedIn Profile')
-                                i.fab.fa-linkedin-in
-                    .col-lg-4
+                            img.rounded-circle(src='assets/img/team/1.jpg', alt='Minjae Sung')
+                            .team-member-content
+                                h4 Minjae Sung
+                                p.position-title Founder, Chairman & CEO
+                                p.bio Minjae is the founder, chairman, and CEO of eTrove. He launched eTrove (now SwapDoor) in 2025 and continues to steer the company's vision and product strategy. He holds a B.S. in Economics from the University of California, San Diego.
+                                .social-links
+                                    a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Minjae Sung Twitter Profile')
+                                        i.fab.fa-twitter
+                                    a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Minjae Sung Facebook Profile')
+                                        i.fab.fa-facebook-f
+                                    a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Minjae Sung LinkedIn Profile')
+                                        i.fab.fa-linkedin-in
+                .row
+                    .col-lg-10.mx-auto
                         .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/team/2.jpg', alt='...')
-                            h4 Diana Petersen
-                            p.text-muted Lead Marketer
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Diana Petersen Twitter Profile')
-                                i.fab.fa-twitter
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Diana Petersen Facebook Profile')
-                                i.fab.fa-facebook-f
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Diana Petersen LinkedIn Profile')
-                                i.fab.fa-linkedin-in
-                    .col-lg-4
-                        .team-member
-                            img.mx-auto.rounded-circle(src='assets/img/team/3.jpg', alt='...')
-                            h4 Larry Parker
-                            p.text-muted Lead Developer
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Larry Parker Twitter Profile')
-                                i.fab.fa-twitter
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Larry Parker Facebook Profile')
-                                i.fab.fa-facebook-f
-                            a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Larry Parker LinkedIn Profile')
-                                i.fab.fa-linkedin-in
+                            img.rounded-circle(src='assets/img/team/2.jpg', alt='Milan Rona')
+                            .team-member-content
+                                h4 Milan Rona
+                                p.position-title Co-founder & CTO
+                                p.bio Milan Rona is the Co-founder and CTO of eTrove, where he leads backend development, focusing on authentication, notifications, and overall platform performance. Joined early in the project to help eTrove scale quickly and securely.
+                                .social-links
+                                    a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Milan Rona Twitter Profile')
+                                        i.fab.fa-twitter
+                                    a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Milan Rona Facebook Profile')
+                                        i.fab.fa-facebook-f
+                                    a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Milan Rona LinkedIn Profile')
+                                        i.fab.fa-linkedin-in
                 .row
                     .col-lg-8.mx-auto.text-center
                         p.large.text-muted
-                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+                            | Our leadership team combines deep industry expertise with innovative thinking to drive eTrove's mission forward. Together, we're building the future of business solutions.
 
         // Footer
         footer.footer.py-4
