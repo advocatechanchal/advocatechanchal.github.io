@@ -25,10 +25,10 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-          keep_files: false
+      - name: Commit dist/ to master
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add dist/
+          git diff-index --quiet HEAD || git commit -m "build: update dist on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git push origin master

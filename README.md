@@ -51,16 +51,18 @@ The contact section includes three profile rows labeled Address, Contact, and Em
  
 ## Deployment
 
-Deploys are handled by the GitHub Actions workflow `.github/workflows/deploy.yml`, which builds the site into `dist/` and publishes that directory to the `gh-pages` branch.
+Deploys are handled by the GitHub Actions workflow `.github/workflows/deploy.yml`, which:
+1. Builds the site into `dist/` on every push to `master`
+2. Commits `dist/` back to `master`
+3. GitHub Pages serves from the `dist/` directory (configured in repository Settings → Pages)
 
-- If this repository is a project site, set GitHub Pages to serve from the `gh-pages` branch.
-- If this repository is a user/organization site (the repository name is `advocatechanchal.github.io`), GitHub Pages typically serves from the `master` branch root or the `docs/` folder; you can either change the Pages source in repository settings or ask me to update the workflow to publish to `master` or `docs/` instead.
-
-To trigger a deploy, push to `master`:
+To trigger a deploy, simply push to `master`:
 
 ```bash
-git add .github/workflows/deploy.yml
-git commit -m "Add CI deploy workflow"
+git add <your changes>
+git commit -m "Your message"
 git push origin master
 ```
+
+The workflow will build and commit the updated `dist/` automatically.
 
