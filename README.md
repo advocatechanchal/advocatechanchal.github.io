@@ -64,4 +64,3 @@ git commit -m "Add CI deploy workflow"
 git push origin master
 ```
 
-If you use a custom domain, a `CNAME` file is included in the repository root to configure it.
