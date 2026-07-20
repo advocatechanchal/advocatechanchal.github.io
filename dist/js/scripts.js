@@ -1,7 +1,7 @@
 /*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+* Start Bootstrap - Advocate Chanchal Bhati v7.0.12 (https://advocatechanchalbhati.com)
+* Copyright 2013-2026 Advocate Chanchal Bhati
+* Licensed under MIT (https://github.com/StartBootstrap/advocatechanchal-site/blob/master/LICENSE)
 */
 //
 // Scripts

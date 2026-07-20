@@ -3,8 +3,9 @@
 //
 
 section#contact {
-    background-color: $gray-900;
-    background-image: url("../assets/img/map-image.png");
+    background:
+        linear-gradient(125deg, rgba(10, 18, 33, 0.95), rgba(20, 35, 58, 0.92)),
+        url("../assets/img/map-image.png");
     background-repeat: no-repeat;
     background-position: center;
 
@@ -12,7 +13,17 @@ section#contact {
         color: $white;
     }
 
+    .section-subheading {
+        color: rgba($white, 0.82);
+    }
+
     form#contactForm {
+        background: rgba(#ffffff, 0.1);
+        border: 1px solid rgba($white, 0.16);
+        border-radius: 1.2rem;
+        padding: 1.35rem;
+        backdrop-filter: blur(3px);
+
         .form-group {
             margin-bottom: $grid-gutter-width;
 
@@ -24,6 +35,12 @@ section#contact {
             input.form-control {
                 height: auto;
             }
+        }
+
+        .form-control {
+            border: 1px solid rgba($white, 0.3);
+            background: rgba($white, 0.95);
+            color: #151c2c;
         }
 
         .form-group-textarea {

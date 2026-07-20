@@ -4,11 +4,17 @@
 
 // Override Bootstrap color variables
 
-$yellow: #ffc800;
+$gold: #ba9652;
+$ink: #0f1a2f;
+$stone: #e8e0cf;
+$mist: #f7f4ed;
 
 // Override Bootstrap state colors variables
 
-$primary: $yellow;
+$primary: $gold;
+$secondary: $ink;
+$light: $mist;
+$dark: $ink;
 
 // Override Bootstrap contrast ratio
 

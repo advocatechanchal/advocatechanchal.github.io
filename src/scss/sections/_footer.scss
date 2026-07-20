@@ -6,4 +6,18 @@
     text-align: center;
     font-size: 0.9rem;
     font-family: $headings-font-family;
+    background: #0f1a2f;
+    color: rgba($white, 0.9);
+
+    a {
+        color: #f6dca9;
+    }
+
+    .footer-tagline {
+        display: inline-block;
+        color: rgba($white, 0.88);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
 }

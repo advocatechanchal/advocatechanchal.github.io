@@ -1,6 +1,6 @@
 {
-    "title": "Agency",
-    "name": "startbootstrap-agency",
+    "title": "Advocate Chanchal Bhati",
+    "name": "advocatechanchal-site",
     "version": "7.0.12",
     "scripts": {
         "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
@@ -12,7 +12,7 @@
         "start": "npm run build && node scripts/start.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
     },
-    "description": "Agency is a one page HTML theme for Bootstrap.",
+    "description": "A redesigned one-page legal services website for Advocate Chanchal Bhati.",
     "keywords": [
         "css",
         "sass",
@@ -21,19 +21,16 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/theme/agency",
+    "homepage": "https://advocatechanchalbhati.com",
     "bugs": {
-        "url": "https://github.com/StartBootstrap/startbootstrap-agency/issues",
-        "email": "feedback@startbootstrap.com"
+        "url": "https://github.com/advocatechanchal/advocatechanchal.github.io/issues"
     },
     "license": "MIT",
-    "author": "Start Bootstrap",
-    "contributors": [
-        "David Miller (https://davidmiller.io/)"
-    ],
+    "author": "Advocate Chanchal Bhati",
+    "contributors": [],
     "repository": {
         "type": "git",
-        "url": "https://github.com/StartBootstrap/startbootstrap-agency.git"
+        "url": "https://github.com/advocatechanchal/advocatechanchal.github.io.git"
     },
     "dependencies": {
         "bootstrap": "5.2.3"
