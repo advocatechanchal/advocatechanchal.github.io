@@ -48,3 +48,20 @@ npm start
 ## Notes
 
 The contact section includes three profile rows labeled Address, Contact, and Email. Their values are intentionally blank so they can be filled later without further template changes.
+ 
+## Deployment
+
+Deploys are handled by the GitHub Actions workflow `.github/workflows/deploy.yml`, which builds the site into `dist/` and publishes that directory to the `gh-pages` branch.
+
+- If this repository is a project site, set GitHub Pages to serve from the `gh-pages` branch.
+- If this repository is a user/organization site (the repository name is `advocatechanchal.github.io`), GitHub Pages typically serves from the `main` branch root or the `docs/` folder; you can either change the Pages source in repository settings or ask me to update the workflow to publish to `main` or `docs/` instead.
+
+To trigger a deploy, push to `main`:
+
+```bash
+git add .github/workflows/deploy.yml
+git commit -m "Add CI deploy workflow"
+git push origin main
+```
+
+If you use a custom domain, a `CNAME` file is included in the repository root to configure it.
