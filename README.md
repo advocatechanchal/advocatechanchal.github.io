@@ -14,7 +14,7 @@ This repository contains a redesigned one-page website for Advocate Chanchal Bha
 - `src/pug/` - page templates and modal content
 - `src/scss/` - theme variables and section/component styles
 - `src/js/` - front-end behavior scripts
-- `dist/` - generated output (created during build)
+- `docs/` - generated output (created during build, served by GitHub Pages)
 
 ## Run Locally
 
@@ -52,9 +52,9 @@ The contact section includes three profile rows labeled Address, Contact, and Em
 ## Deployment
 
 Deploys are handled by the GitHub Actions workflow `.github/workflows/deploy.yml`, which:
-1. Builds the site into `dist/` on every push to `master`
-2. Commits `dist/` back to `master`
-3. GitHub Pages serves from the `dist/` directory (configured in repository Settings → Pages)
+1. Builds the site into `docs/` on every push to `master`
+2. Commits `docs/` back to `master`
+3. GitHub Pages serves from the `/docs` directory (configured in repository Settings → Pages)
 
 To trigger a deploy, simply push to `master`:
 
@@ -64,5 +64,5 @@ git commit -m "Your message"
 git push origin master
 ```
 
-The workflow will build and commit the updated `dist/` automatically.
+The workflow will build and commit the updated `docs/` automatically.
 

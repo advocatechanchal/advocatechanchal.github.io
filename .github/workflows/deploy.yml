@@ -28,10 +28,10 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Commit dist/ to master
+      - name: Commit docs/ to master
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add dist/
-          git diff-index --quiet HEAD || git commit -m "build: update dist on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git add docs/
+          git diff-index --quiet HEAD || git commit -m "build: update docs on $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           git push origin master
