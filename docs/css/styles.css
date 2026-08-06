@@ -10870,6 +10870,25 @@ p {
   box-shadow: 0 10px 24px rgba(20, 28, 48, 0.08);
 }
 
+.practice-card {
+  height: 100%;
+  border-radius: 1rem;
+  padding: 1.2rem 1.05rem;
+  border: 1px solid rgba(186, 150, 82, 0.26);
+  background: linear-gradient(180deg, #fffdf9, #f8f0e0);
+  box-shadow: 0 12px 26px rgba(20, 28, 48, 0.09);
+}
+.practice-card .practice-title {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.practice-card .practice-description {
+  margin-bottom: 0;
+  color: rgba(27, 34, 48, 0.82);
+  font-size: 0.95rem;
+}
+
 .contact-detail-card {
   height: 100%;
   border-radius: 1.2rem;
@@ -10900,6 +10919,14 @@ p {
   display: inline-block;
   min-width: 8.5rem;
   min-height: 1.1rem;
+}
+.contact-detail-card .consultation-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+.contact-detail-card .consultation-list li {
+  margin-bottom: 0.35rem;
+  color: rgba(27, 34, 48, 0.84);
 }
 
 @media (min-width: 768px) {
