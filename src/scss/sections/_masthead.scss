@@ -1,113 +1,117 @@
-//
-// Masthead section styling
-//
-
 header.masthead {
-    padding-top: 6rem + 4.5rem;
-    padding-bottom: 6rem;
+    padding-top: 8rem + 4.5rem;
+    padding-bottom: 8rem;
     text-align: center;
     color: $white;
-    background-image: linear-gradient(135deg, rgba(11, 19, 34, 0.97) 0%, rgba(22, 37, 64, 0.88) 40%, rgba(186, 150, 82, 0.72) 100%),
-        url("../assets/img/header-bg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
+    background: linear-gradient(135deg, #0f2847 0%, #1e3a8a 40%, #334155 100%);
     position: relative;
     overflow: hidden;
 
     &::before {
         content: "";
         position: absolute;
-        width: 40rem;
-        height: 40rem;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(186, 150, 82, 0.15), transparent 70%);
-        top: -8rem;
-        left: -10rem;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.25), transparent 50%),
+            radial-gradient(circle at 10% 80%, rgba(16, 185, 129, 0.15), transparent 40%);
         pointer-events: none;
-        animation: float 6s ease-in-out infinite;
     }
 
     &::after {
         content: "";
         position: absolute;
-        width: 35rem;
-        height: 35rem;
+        bottom: -50%;
+        right: -10%;
+        width: 60rem;
+        height: 60rem;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(255, 244, 213, 0.2), transparent 70%);
-        bottom: -4rem;
-        right: -5rem;
+        background: radial-gradient(circle, rgba(30, 58, 138, 0.4), transparent 70%);
         pointer-events: none;
-        animation: float 8s ease-in-out infinite reverse;
     }
 
     .masthead-subheading {
-        font-size: 1rem;
-        line-height: 1.7rem;
-        margin-bottom: 1.1rem;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        margin-bottom: 1.5rem;
         font-family: $subheadings-font-family;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: rgba(255, 245, 226, 0.95);
-        animation: slideUp 0.8s ease-out 0.2s backwards;
+        color: rgba(212, 175, 55, 1);
+        font-weight: 600;
+        animation: slideUp 0.8s ease-out 0.1s backwards;
     }
 
     .masthead-names {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 2.2rem;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
         position: relative;
         z-index: 1;
     }
 
     .masthead-heading {
-        font-size: 3.1rem;
-        font-weight: 700;
+        font-size: 3.5rem;
+        font-weight: 800;
         line-height: 1.1;
         margin-bottom: 0;
         font-family: $headings-font-family;
-        letter-spacing: 0.03em;
-        background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        animation: slideUp 0.8s ease-out 0.2s backwards;
+    }
+
+    .masthead-brief {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 2rem auto;
+        color: rgba(255, 255, 255, 0.95);
         animation: slideUp 0.8s ease-out 0.3s backwards;
+        font-weight: 400;
     }
 }
 
 @include media-breakpoint-up(md) {
     header.masthead {
-        padding-top: 12.5rem + 4.5rem;
-        padding-bottom: 12.5rem;
+        padding-top: 14rem + 4.5rem;
+        padding-bottom: 14rem;
 
         .masthead-subheading {
-            font-size: 1.03rem;
-            line-height: 1.8rem;
-            margin-bottom: 1.35rem;
+            font-size: 1.2rem;
+            line-height: 1.9rem;
+            margin-bottom: 2rem;
         }
 
         .masthead-names {
             flex-direction: row;
             justify-content: center;
-            gap: 2.5rem;
-            margin-bottom: 2.6rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .masthead-heading {
-            font-size: 4.25rem;
-            font-weight: 700;
+            font-size: 4.5rem;
+            font-weight: 800;
             line-height: 1;
+        }
+
+        .masthead-brief {
+            font-size: 1.25rem;
         }
     }
 }
+
 // Animations
 @keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(50px);
     }
     to {
         opacity: 1;
@@ -120,6 +124,15 @@ header.masthead {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
     }
 }

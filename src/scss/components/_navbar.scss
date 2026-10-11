@@ -5,13 +5,12 @@
 #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background: linear-gradient(180deg, rgba(10, 18, 33, 0.97), rgba(10, 18, 33, 0.94));
-    box-shadow: 0 8px 32px rgba(7, 12, 26, 0.24);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(186, 150, 82, 0.2);
+    background: linear-gradient(180deg, rgba(15, 40, 71, 0.98), rgba(30, 58, 138, 0.96));
+    box-shadow: 0 4px 20px rgba(15, 40, 71, 0.2);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
 
     .navbar-toggler {
-
         padding: 0.75rem;
         font-size: 0.75rem;
         font-family: $headings-font-family;
@@ -20,12 +19,13 @@
     }
 
     .navbar-brand {
-        color: #fff3d8;
+        color: #d4af37;
         font-family: $headings-font-family;
         font-weight: $headings-font-weight;
         letter-spacing: $headings-letter-spacing;
-        font-size: 1.45rem;
+        font-size: 1.5rem;
         transition: all 0.3s ease;
+        font-weight: 800;
 
         img {
             height: 1.5rem;
@@ -37,20 +37,21 @@
             .nav-link {
                 font-family: $headings-font-family;
                 font-size: 0.95rem;
-                color: rgba($white, 0.9);
+                color: rgba($white, 0.92);
                 letter-spacing: $headings-letter-spacing;
-                transition: all 0.25s ease;
+                transition: all 0.3s ease;
                 position: relative;
+                font-weight: 600;
 
                 &::after {
                     content: "";
                     position: absolute;
-                    bottom: -2px;
+                    bottom: -4px;
                     left: 0;
                     width: 0;
-                    height: 2px;
-                    background: linear-gradient(90deg, $primary, rgba($primary, 0.5));
-                    transition: width 0.3s ease;
+                    height: 3px;
+                    background: linear-gradient(90deg, $primary, rgba($primary, 0.4));
+                    transition: width 0.3s cubic-bezier(0.23, 1, 0.320, 1);
                 }
 
                 &.active,

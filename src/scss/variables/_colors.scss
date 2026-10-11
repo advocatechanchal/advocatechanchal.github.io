@@ -4,18 +4,19 @@
 
 // Override Bootstrap color variables
 
-$gold: #ba9652;
-$ink: #0f1a2f;
-$stone: #e8e0cf;
-$mist: #f7f4ed;
+$gold: #d4af37;
+$ink: #0a1628;
+$stone: #e8dcc8;
+$mist: #f5f3f0;
+
+// Additional modern colors
+$accent-blue: #1e3a8a;
+$accent-navy: #0f2847;
+$accent-light: #eff6ff;
+$success: #10b981;
+$warning: #f59e0b;
 
 // Override Bootstrap state colors variables
 
 $primary: $gold;
-$secondary: $ink;
-$light: $mist;
-$dark: $ink;
-
-// Override Bootstrap contrast ratio
-
-$min-contrast-ratio: 1.5;
+$secondary: $accent-navy;
