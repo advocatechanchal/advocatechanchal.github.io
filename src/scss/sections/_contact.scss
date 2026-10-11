@@ -4,25 +4,46 @@
 
 section#contact {
     background:
-        linear-gradient(125deg, rgba(10, 18, 33, 0.95), rgba(20, 35, 58, 0.92)),
+        linear-gradient(125deg, rgba(10, 18, 33, 0.96), rgba(20, 35, 58, 0.94)),
         url("../assets/img/map-image.png");
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 50%, rgba(186, 150, 82, 0.1), transparent 40%),
+            radial-gradient(circle at 80% 80%, rgba(186, 150, 82, 0.08), transparent 50%);
+        pointer-events: none;
+    }
 
     .section-heading {
         color: $white;
+        position: relative;
+        z-index: 1;
     }
 
     .section-subheading {
-        color: rgba($white, 0.82);
+        color: rgba($white, 0.85);
+        position: relative;
+        z-index: 1;
     }
 
     form#contactForm {
-        background: rgba(#ffffff, 0.1);
-        border: 1px solid rgba($white, 0.16);
-        border-radius: 1.2rem;
-        padding: 1.35rem;
-        backdrop-filter: blur(3px);
+        background: rgba(#ffffff, 0.12);
+        border: 1px solid rgba($white, 0.2);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        backdrop-filter: blur(8px);
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
 
         .form-group {
             margin-bottom: $grid-gutter-width;
@@ -39,8 +60,16 @@ section#contact {
 
         .form-control {
             border: 1px solid rgba($white, 0.3);
-            background: rgba($white, 0.95);
+            background: rgba($white, 0.97);
             color: #151c2c;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+
+            &:focus {
+                border-color: $primary;
+                box-shadow: 0 0 0 3px rgba($primary, 0.2);
+                background: rgba($white, 1);
+            }
         }
 
         .form-group-textarea {
@@ -49,16 +78,12 @@ section#contact {
             textarea {
                 height: 100%;
                 min-height: 10rem;
+                resize: vertical;
             }
         }
 
         p.help-block {
             margin: 0;
-        }
-
-        .form-control:focus {
-            border-color: $primary;
-            box-shadow: none;
         }
 
         ::-webkit-input-placeholder {

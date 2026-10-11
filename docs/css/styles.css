@@ -10832,7 +10832,7 @@ html {
 body {
   position: relative;
   color: #1b2230;
-  background: radial-gradient(circle at 20% 20%, rgba(186, 150, 82, 0.14), transparent 28%), radial-gradient(circle at 90% 10%, rgba(33, 52, 86, 0.12), transparent 30%), linear-gradient(180deg, #fbf9f5 0%, #f6f1e7 40%, #ffffff 100%);
+  background: radial-gradient(circle at 20% 20%, rgba(186, 150, 82, 0.08), transparent 28%), radial-gradient(circle at 90% 10%, rgba(33, 52, 86, 0.08), transparent 30%), linear-gradient(180deg, #fbf9f5 0%, #f6f1e7 40%, #ffffff 100%);
 }
 
 p {
@@ -10846,6 +10846,11 @@ p {
   font-size: 2.7rem;
   margin-top: 0;
   margin-bottom: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0f1a2f, #030508);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .page-section h3.section-subheading, .page-section .section-subheading.h3 {
   font-size: 1.05rem;
@@ -10853,7 +10858,8 @@ p {
   font-style: normal;
   font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin-bottom: 4rem;
-  color: rgba(27, 34, 48, 0.75);
+  color: rgba(27, 34, 48, 0.72);
+  line-height: 1.6;
 }
 
 .coverage-badge {
@@ -10873,20 +10879,51 @@ p {
 .practice-card {
   height: 100%;
   border-radius: 1rem;
-  padding: 1.2rem 1.05rem;
+  padding: 1.8rem 1.5rem;
   border: 1px solid rgba(186, 150, 82, 0.26);
   background: linear-gradient(180deg, #fffdf9, #f8f0e0);
   box-shadow: 0 12px 26px rgba(20, 28, 48, 0.09);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.practice-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ba9652, rgba(186, 150, 82, 0.4));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease-out;
+}
+.practice-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(20, 28, 48, 0.16);
+  border-color: rgba(186, 150, 82, 0.45);
+  background: linear-gradient(180deg, #fffef9, #faf4e8);
+}
+.practice-card:hover::before {
+  transform: scaleX(1);
+}
+.practice-card:hover .practice-title {
+  color: #ba9652;
 }
 .practice-card .practice-title {
-  margin-bottom: 0.6rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
   line-height: 1.35;
+  font-weight: 600;
+  transition: color 0.35s ease;
+  color: #0f1a2f;
 }
 .practice-card .practice-description {
   margin-bottom: 0;
   color: rgba(27, 34, 48, 0.82);
   font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .contact-detail-card {
@@ -10935,18 +10972,49 @@ p {
   }
 }
 .btn-xl {
-  padding: 1rem 2.3rem;
+  padding: 1.1rem 2.6rem;
   font-family: "Cormorant Garamond", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 600;
   border-radius: 999px;
   letter-spacing: 0.06em;
   border-width: 2px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-xl::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
 }
 .btn-xl:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(15, 26, 47, 0.22);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(15, 26, 47, 0.3);
+}
+.btn-xl:hover::before {
+  left: 100%;
+}
+.btn-xl.btn-primary {
+  background: linear-gradient(135deg, #ba9652, #a28141);
+  border-color: #ba9652;
+}
+.btn-xl.btn-primary:hover {
+  box-shadow: 0 16px 32px rgba(186, 150, 82, 0.35);
+}
+.btn-xl.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+.btn-xl.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ba9652;
+  color: #ba9652;
 }
 
 .btn-social {
@@ -10958,13 +11026,23 @@ p {
   padding: 0;
   border-radius: 100%;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  background: rgba(186, 150, 82, 0.1);
+}
+.btn-social:hover {
+  background: #ba9652;
+  border-color: #ba9652;
+  transform: scale(1.15);
 }
 
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: linear-gradient(180deg, rgba(10, 18, 33, 0.96), rgba(10, 18, 33, 0.92));
-  box-shadow: 0 14px 38px rgba(7, 12, 26, 0.42);
+  background: linear-gradient(180deg, rgba(10, 18, 33, 0.97), rgba(10, 18, 33, 0.94));
+  box-shadow: 0 8px 32px rgba(7, 12, 26, 0.24);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(186, 150, 82, 0.2);
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -10979,6 +11057,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.045em;
   font-size: 1.45rem;
+  transition: all 0.3s ease;
 }
 #mainNav .navbar-brand img {
   height: 1.5rem;
@@ -10988,10 +11067,24 @@ p {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.9);
   letter-spacing: 0.045em;
-  transition: color 0.25s ease;
+  transition: all 0.25s ease;
+  position: relative;
+}
+#mainNav .navbar-nav .nav-item .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ba9652, rgba(186, 150, 82, 0.5));
+  transition: width 0.3s ease;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #ba9652;
+}
+#mainNav .navbar-nav .nav-item .nav-link.active::after, #mainNav .navbar-nav .nav-item .nav-link:hover::after {
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -11036,7 +11129,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(110deg, rgba(11, 19, 34, 0.96) 20%, rgba(22, 37, 64, 0.84) 58%, rgba(186, 150, 82, 0.66) 100%), url("../assets/img/header-bg.jpg");
+  background-image: linear-gradient(135deg, rgba(11, 19, 34, 0.97) 0%, rgba(22, 37, 64, 0.88) 40%, rgba(186, 150, 82, 0.72) 100%), url("../assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11044,16 +11137,29 @@ header.masthead {
   position: relative;
   overflow: hidden;
 }
+header.masthead::before {
+  content: "";
+  position: absolute;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(186, 150, 82, 0.15), transparent 70%);
+  top: -8rem;
+  left: -10rem;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
 header.masthead::after {
   content: "";
   position: absolute;
-  width: 25rem;
-  height: 25rem;
+  width: 35rem;
+  height: 35rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 244, 213, 0.26), transparent 70%);
-  top: -6rem;
-  right: -6rem;
+  background: radial-gradient(circle, rgba(255, 244, 213, 0.2), transparent 70%);
+  bottom: -4rem;
+  right: -5rem;
   pointer-events: none;
+  animation: float 8s ease-in-out infinite reverse;
 }
 header.masthead .masthead-subheading {
   font-size: 1rem;
@@ -11062,7 +11168,8 @@ header.masthead .masthead-subheading {
   font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 245, 226, 0.92);
+  color: rgba(255, 245, 226, 0.95);
+  animation: slideUp 0.8s ease-out 0.2s backwards;
 }
 header.masthead .masthead-names {
   display: flex;
@@ -11070,6 +11177,8 @@ header.masthead .masthead-names {
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 2.2rem;
+  position: relative;
+  z-index: 1;
 }
 header.masthead .masthead-heading {
   font-size: 3.1rem;
@@ -11078,6 +11187,11 @@ header.masthead .masthead-heading {
   margin-bottom: 0;
   font-family: "Cormorant Garamond", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   letter-spacing: 0.03em;
+  background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideUp 0.8s ease-out 0.3s backwards;
 }
 
 @media (min-width: 768px) {
@@ -11100,6 +11214,24 @@ header.masthead .masthead-heading {
     font-size: 4.25rem;
     font-weight: 700;
     line-height: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
 #portfolio .portfolio-item {
@@ -11388,23 +11520,41 @@ header.masthead .masthead-heading {
 }
 
 section#contact {
-  background: linear-gradient(125deg, rgba(10, 18, 33, 0.95), rgba(20, 35, 58, 0.92)), url("../assets/img/map-image.png");
+  background: linear-gradient(125deg, rgba(10, 18, 33, 0.96), rgba(20, 35, 58, 0.94)), url("../assets/img/map-image.png");
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+}
+section#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(186, 150, 82, 0.1), transparent 40%), radial-gradient(circle at 80% 80%, rgba(186, 150, 82, 0.08), transparent 50%);
+  pointer-events: none;
 }
 section#contact .section-heading {
   color: #fff;
+  position: relative;
+  z-index: 1;
 }
 section#contact .section-subheading {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  z-index: 1;
 }
 section#contact form#contactForm {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 1.2rem;
-  padding: 1.35rem;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
 }
 section#contact form#contactForm .form-group {
   margin-bottom: 1.5rem;
@@ -11418,8 +11568,15 @@ section#contact form#contactForm .form-group input.form-control {
 }
 section#contact form#contactForm .form-control {
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   color: #151c2c;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+section#contact form#contactForm .form-control:focus {
+  border-color: #ba9652;
+  box-shadow: 0 0 0 3px rgba(186, 150, 82, 0.2);
+  background: white;
 }
 section#contact form#contactForm .form-group-textarea {
   height: 100%;
@@ -11427,13 +11584,10 @@ section#contact form#contactForm .form-group-textarea {
 section#contact form#contactForm .form-group-textarea textarea {
   height: 100%;
   min-height: 10rem;
+  resize: vertical;
 }
 section#contact form#contactForm p.help-block {
   margin: 0;
-}
-section#contact form#contactForm .form-control:focus {
-  border-color: #ba9652;
-  box-shadow: none;
 }
 section#contact form#contactForm ::-webkit-input-placeholder {
   font-family: "Cormorant Garamond", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -11460,11 +11614,19 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Cormorant Garamond", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  background: #0f1a2f;
+  background: linear-gradient(180deg, #0a1221 0%, #0f1a2f 100%);
   color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(186, 150, 82, 0.2);
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
 }
 .footer a {
   color: #f6dca9;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.footer a:hover {
+  color: #ba9652;
+  text-shadow: 0 0 12px rgba(186, 150, 82, 0.4);
 }
 .footer .footer-tagline {
   display: inline-block;
@@ -11472,4 +11634,10 @@ section#contact form#contactForm :-ms-input-placeholder {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+.footer .footer-content {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(186, 150, 82, 0.15);
 }

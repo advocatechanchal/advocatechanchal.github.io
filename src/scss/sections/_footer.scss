@@ -6,11 +6,20 @@
     text-align: center;
     font-size: 0.9rem;
     font-family: $headings-font-family;
-    background: #0f1a2f;
+    background: linear-gradient(180deg, #0a1221 0%, #0f1a2f 100%);
     color: rgba($white, 0.9);
+    border-top: 1px solid rgba(186, 150, 82, 0.2);
+    padding: 3rem 0 2rem;
+    margin-top: 4rem;
 
     a {
         color: #f6dca9;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+
+        &:hover {
+            color: $primary;
+            text-shadow: 0 0 12px rgba(186, 150, 82, 0.4);
+        }
     }
 
     .footer-tagline {
@@ -19,5 +28,11 @@
         letter-spacing: 0.05em;
         text-transform: uppercase;
         font-size: 0.8rem;
+        margin-top: 0.5rem;
     }
+
+    .footer-content {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(186, 150, 82, 0.15);    }
 }

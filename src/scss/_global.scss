@@ -15,8 +15,8 @@ body {
     position: relative;
     color: #1b2230;
     background:
-        radial-gradient(circle at 20% 20%, rgba($primary, 0.14), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(#213456, 0.12), transparent 30%),
+        radial-gradient(circle at 20% 20%, rgba($primary, 0.08), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(#213456, 0.08), transparent 30%),
         linear-gradient(180deg, #fbf9f5 0%, #f6f1e7 40%, #ffffff 100%);
 }
 
@@ -35,6 +35,11 @@ p {
         font-size: 2.7rem;
         margin-top: 0;
         margin-bottom: 1.1rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, $secondary, darken($secondary, 10%));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     h3.section-subheading {
@@ -43,7 +48,8 @@ p {
         font-style: normal;
         font-family: $subheadings-font-family;
         margin-bottom: 4rem;
-        color: rgba(#1b2230, 0.75);
+        color: rgba(#1b2230, 0.72);
+        line-height: 1.6;
     }
 }
 
@@ -64,21 +70,56 @@ p {
 .practice-card {
     height: 100%;
     border-radius: 1rem;
-    padding: 1.2rem 1.05rem;
+    padding: 1.8rem 1.5rem;
     border: 1px solid rgba($primary, 0.26);
     background: linear-gradient(180deg, #fffdf9, #f8f0e0);
     box-shadow: 0 12px 26px rgba(20, 28, 48, 0.09);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, $primary, rgba($primary, 0.4));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s ease-out;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 48px rgba(20, 28, 48, 0.16);
+        border-color: rgba($primary, 0.45);
+        background: linear-gradient(180deg, #fffef9, #faf4e8);
+
+        &::before {
+            transform: scaleX(1);
+        }
+
+        .practice-title {
+            color: $primary;
+        }
+    }
 
     .practice-title {
-        margin-bottom: 0.6rem;
-        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        font-size: 1.15rem;
         line-height: 1.35;
+        font-weight: 600;
+        transition: color 0.35s ease;
+        color: $secondary;
     }
 
     .practice-description {
         margin-bottom: 0;
         color: rgba(#1b2230, 0.82);
         font-size: 0.95rem;
+        line-height: 1.6;
     }
 }
 

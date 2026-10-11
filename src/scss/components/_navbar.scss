@@ -5,8 +5,10 @@
 #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background: linear-gradient(180deg, rgba(10, 18, 33, 0.96), rgba(10, 18, 33, 0.92));
-    box-shadow: 0 14px 38px rgba(7, 12, 26, 0.42);
+    background: linear-gradient(180deg, rgba(10, 18, 33, 0.97), rgba(10, 18, 33, 0.94));
+    box-shadow: 0 8px 32px rgba(7, 12, 26, 0.24);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(186, 150, 82, 0.2);
 
     .navbar-toggler {
 
@@ -23,6 +25,7 @@
         font-weight: $headings-font-weight;
         letter-spacing: $headings-letter-spacing;
         font-size: 1.45rem;
+        transition: all 0.3s ease;
 
         img {
             height: 1.5rem;
@@ -36,11 +39,27 @@
                 font-size: 0.95rem;
                 color: rgba($white, 0.9);
                 letter-spacing: $headings-letter-spacing;
-                transition: color 0.25s ease;
+                transition: all 0.25s ease;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, $primary, rgba($primary, 0.5));
+                    transition: width 0.3s ease;
+                }
 
                 &.active,
                 &:hover {
                     color: $primary;
+
+                    &::after {
+                        width: 100%;
+                    }
                 }
             }
         }
